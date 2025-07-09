@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UESTE: 75 Años Educando con Fe, Ciencia y Compromiso</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap');
+
+    :root {
+      --beige: #f7e6ba;
+      --burdeos: #7b1e3a;
+      --azul-marino: #002b5c;
+    }
+
+    body {
+      background-color: var(--beige);
+      font-family: 'Lora', serif;
+      color: #222;
+      margin: 0;
+      scroll-behavior: smooth;
+      text-align: center;
+      padding: 0 2rem 3rem 2rem;
+    }
+
+    .fondo-comun {
+      background-image: url('promo.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      background-attachment: fixed;
+      padding-top: 100px;
+      padding-bottom: 2rem;
+      text-align: center;
+    }
+
+    .nav-principal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 43, 92, 0.6);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      backdrop-filter: saturate(180%) blur(10px);
+    }
+
+    .nav-principal ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 1rem 0;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-principal a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-principal a:hover {
+      background-color: var(--burdeos);
+    }
+
+    .titulo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 900px;
+      margin: 1.5rem auto 3rem auto;
+      padding: 2rem 2rem;
+      color: white;
+      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      text-align: left;
+      gap: 1.2rem;
+      user-select: none;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .escudo {
+      width: 130px;
+      height: auto;
+      flex-shrink: 0;
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+    }
+
+    /* Sección de contenido con imagen al lado */
+    .bloque-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+
+    /* Imagen para bloque-flex */
+    .bloque-flex img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    /* Para invertir imagen y texto en algunos bloques */
+    .bloque-flex.derecha {
+      flex-direction: row-reverse;
+    }
+
+    .bloque-flex p {
+      flex: 1;
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #444;
+      margin: 0;
+    }
+
+    /* Contenedor principal blanco */
+    .container {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      text-align: left;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--burdeos);
+      text-align: center;
+      margin: 2rem auto 1rem auto;
+    }
+
+    /* Misión y Visión: cuadros */
+    .mision-vision {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    .mision-vision .cuadro {
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      flex: 1;
+      font-family: 'Lora', serif;
+      color: #444;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      transition: transform 0.3s ease;
+    }
+
+    .mision-vision .cuadro:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+    }
+
+    .mision-vision h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--burdeos);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Directiva: imágenes circulares */
+    .directiva {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .directiva .miembro {
+      flex: 1;
+      font-family: 'Lora', serif;
+      color: #444;
+    }
+
+    .directiva img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .directiva img:hover {
+      transform: scale(1.05);
+    }
+
+    .directiva .nombre {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .directiva .cargo {
+      font-style: italic;
+      color: var(--burdeos);
+      font-size: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .bloque-flex {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .bloque-flex img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .bloque-flex p {
+        text-align: justify;
+      }
+
+      .mision-vision {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+      }
+
+      .directiva {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+      }
+
+      .directiva .miembro {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fondo-comun">
+    <nav class="nav-principal" role="navigation" aria-label="Menú principal">
+      <ul>
+        <li><a href="#misionvision">Misión y Visión</a></li>
+        <li><a href="#directiva">Directiva</a></li>
+        <li><a href="#comienzo">Comienzo</a></li>
+        <li><a href="#fundacion">Fundación</a></li>
+        <li><a href="#diversificacion">Diversificación</a></li>
+        <li><a href="#identidad">Identidad</a></li>
+        <li><a href="#logros">Reconocimientos</a></li>
+        <li><a href="#actualidad">Actualidad</a></li>
+      </ul>
+    </nav>
+
+    <header class="titulo" role="banner">
+      <img src="escudo ueste.png (2).png" alt="Escudo UESTE" class="escudo" />
+      <span>UESTE: 75 AÑOS EDUCANDO CON<br> FE, CIENCIA Y COMPROMISO</span>
+    </header>
+  </div>
+
+  <main class="container" role="main">
+
+    <!-- NUEVA SECCION: Misión y Visión -->
+    <section id="misionvision">
+      <h3>Misión y Visión</h3>
+      <div class="mision-vision">
+        <div class="cuadro">
+          <h4>Misión</h4>
+          <p>Somos una institución educativa particular católica, cuyo propósito es evangelizar y educar a los niños, adolescentes y jóvenes, desde la Pedagogía de Jesús, según el carisma misionero de Monseñor Miguel Ángel Builes Gómez, y la espiritualidad de Santa Teresita del Niño Jesús. Ofrece una formación integral e inclusiva, entregando a la sociedad Bachilleres de calidad, comprometidos con el medio ambiente desde su ser de cristianos y misioneros.</p>
+        </div>
+        <div class="cuadro">
+          <h4>Visión</h4>
+          <p>La Unidad Educativa “Santa Teresita”, continuará siendo una institución educativa de calidad, reconocida por su excelencia académica e innovadora con proyección comunitaria, logrando liderazgo educativo y evangelizador, orientado a fortalecer la convivencia social, equitativa e inclusiva; que promueva la solidaridad, la justicia e innovación.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUEVA SECCION: Directiva -->
+    <section id="directiva">
+      <h3>Directiva</h3>
+      <div class="directiva">
+        <div class="miembro">
+          <img src="e50d03f3-0eb4-4efa-984e-388ad58bfaac.jpg" alt="Directivo 1" />
+          <div class="nombre">Hna. Blanca Nivicela</div>
+        </div>
+        <div class="miembro">
+          <img src="Imagen2.png" alt="Directivo 2" />
+          <div class="nombre">Hna.Alegría Ríos Bermeo </div>
+        </div>
+        <div class="miembro">
+          <img src="Imagen4.png"Directivo 3 />
+          <div class="nombre">Hna. Mabel Vaque Mora</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comienzo">
+      <h3>Comienzo</h3>
+      <div class="bloque-flex izquierda">
+        <img src="6b74f1bb-8d94-4e40-be0e-fc3db48e7e93.jpg" alt="Imagen Comienzo" />
+        <p>El Reverendo Padre Ángel Tinoco Ruiz, párroco de nuestro cantón, tuvo la visión de fundar una escuela católica dirigida por las Hermanas Misioneras de Santa Teresita, para brindar educación cristiana a la niñez y juventud. Con gran entusiasmo, formó un comité de damas que colaboraron para hacer realidad este proyecto.
+
+Tras superar varios desafíos, en 1951 llegaron las religiosas y, con la bendición del Obispo Nicanor Roberto Aguirre el 22 de abril, se inauguró oficialmente el plantel, marcando un nuevo capítulo en la educación y formación de nuestra comunidad.</p>
+      </div>
+    </section>
+
+    <section id="fundacion">
+      <h3>Fundación del Colegio (1957–1971)</h3>
+      <div class="bloque-flex derecha">
+        <img src="ecebc050-d880-4c01-a54c-f0baf6c8cb27.jpg" alt="Imagen Fundación" />
+        <p>La Comunidad Religiosa de las Hermanas Misioneras de Santa Teresita y colmados sus anhelos de tener una escuela, la mejor de la provincia, pensaron en crear un colegio y así venciendo dificultades y agotando esfuerzos, en Mayo de 1957 se abren las puertas del COLEGIO PARA SEÑORITAS con la especialidad de TALLER EN CORTE Y CONFECCIÓN; incorporándose la primera promoción en Enero 1969 y la última en 1971. Después de varias gestiones ante el Señor Ministro de Educación Dr. Luis Pachano Carrión, se logra abrir las puertas a una juventud femenina santarroseña, para que reciban una educación integral, creando el Ciclo Básico en el Colegio Santa Teresita. La aprobación del Ciclo Básico se dio según resolución Ministerial 2378, que se la obtuvo el 2 de agosto de 1971. Acompañaron a esta gran labor educativa 2 religiosas, distinguiéndose entre ellas a la Rvda. Hna. Elena Cotte, como Rectora del establecimiento y 6 profesores seglares que trabajaron en todo momento con entusiasmo y generosidad.</p>
+      </div>
+    </section>
+
+    <section id="diversificacion">
+      <h3>Diversificación</h3>
+      <div class="bloque-flex izquierda">
+        <img src="Imagen5.png" alt="Imagen Diversificación" />
+        <p>La diversificación del Colegio para Señoritas continuó su marcha, inaugurando en 1973 el CÓDIGO 05D-0170, modalidad Comercio; otorgando el título de Bachiller Técnico en Contabilidad. Con la orientación del Consejo Directivo y la ayuda de la comunidad educativa, se logró dotar al plantel de laboratorios de Ciencias, Matemáticas, Lengua, Computación, Biblioteca, Centro de Cómputo, taller de Dibujo y Computación, además de mobiliario y otros recursos de última tecnología que respondieran a las exigencias del nuevo milenio. Es de destacar que en el año 2002 el Colegio estuvo bajo la administración directa del Ministerio de Educación, logrando en este período fortalecer la infraestructura y consolidar la unidad educativa. Posteriormente, el 17 de enero de 2003, se retornó la administración a la Comunidad Religiosa, retomando con renovado impulso el desarrollo institucional y proyectos pedagógicos innovadores que contribuyen a la formación integral del estudiante. Actualmente, la Unidad Educativa Santa Teresita continúa ampliando sus horizontes académicos, tecnológicos y culturales para ofrecer una educación de calidad con valores cristianos y misioneros.</p>
+      </div>
+    </section>
+
+    <section id="identidad">
+      <h3>Identidad</h3>
+      <div class="bloque-flex derecha">
+        <img src="images.jpg" alt="Imagen Identidad" />
+        <p>La identidad institucional se sustenta en los valores cristianos y en la espiritualidad misionera que inspira todas las acciones educativas. El carisma de Monseñor Miguel Ángel Builes Gómez guía el quehacer cotidiano, impulsando a estudiantes y docentes a vivir la fe con compromiso y coherencia. Se promueve la formación integral del ser humano, desarrollando capacidades intelectuales, afectivas y sociales, para formar ciudadanos responsables, solidarios y comprometidos con la construcción de una sociedad más justa y humana. El respeto por la diversidad, la justicia social, el cuidado del medio ambiente y la cultura de paz son elementos esenciales en la identidad que se vive y comparte en cada espacio educativo. La comunidad educativa se siente orgullosa de mantener viva esta tradición y de adaptarse a los cambios con una propuesta pedagógica innovadora y humanizadora.</p>
+      </div>
+    </section>
+
+    <section id="logros">
+      <h3>Logros y Reconocimientos</h3>
+      <div class="bloque-flex izquierda">
+        <img src="WhatsApp Image 2025-07-08 at 8.52.25 PM.jpeg" alt="Imagen Logros" />
+        <p>A lo largo de su historia, la institución ha recibido múltiples reconocimientos por su aporte educativo y social en la región. Ha sido destacada por la formación de líderes estudiantiles, el compromiso con la evangelización y la calidad académica. Los estudiantes de la UESTE han sobresalido en concursos académicos, eventos deportivos y actividades culturales a nivel provincial y nacional, reflejando el esfuerzo conjunto de docentes, familias y autoridades. La institución continúa impulsando programas de inclusión, innovación tecnológica y proyectos sociales que fortalecen su papel como referente educativo en el cantón y la provincia. El reconocimiento y apoyo de la comunidad consolidan el legado y el futuro prometedor de la Unidad Educativa Santa Teresita.</p>
+      </div>
+    </section>
+
+    <section id="actualidad">
+      <h3>Actualidad</h3>
+      <div class="bloque-flex derecha">
+        <img src="actualidad.jpg" alt="Imagen Actualidad" />
+        <p>Hoy, la Unidad Educativa “Santa Teresita” sigue firme en su misión educativa, ofreciendo una formación integral con énfasis en valores cristianos y compromiso social. Cuenta con instalaciones modernas, tecnología avanzada y un equipo docente capacitado y comprometido. Los proyectos pedagógicos incluyen el fortalecimiento de la investigación, la innovación, el uso de TICs y la promoción de una cultura ambiental sostenible. La comunidad educativa participa activamente en actividades pastorales, deportivas, culturales y de servicio social, fomentando el desarrollo integral de los estudiantes y su vinculación con la sociedad. La UESTE mira al futuro con esperanza, manteniendo su esencia y apostando por la excelencia y la inclusión educativa en beneficio de las nuevas generaciones.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="btn-container" aria-label="Botón para volver al inicio" style="text-align:center; margin-bottom: 3rem;">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background-color: var(--burdeos); color: white; border:none; border-radius: 8px; padding: 0.8rem 1.6rem; font-family: 'Playfair Display', serif; font-size: 1rem; cursor: pointer;">Volver al inicio</button>
+  </div>
+<div class="facebook-icon" role="complementary" aria-label="Enlace Facebook UESTE"
+     style="position: fixed; bottom: 20px; right: 30px; z-index: 1000;">
+  <a href="https://www.facebook.com/uesanta.teresita.96" target="_blank" rel="noopener noreferrer" aria-label="Facebook UESTE">
+    <img src="Facebook_Logo_(2019).png" alt="Facebook UESTE" 
+         style="width: 40px; height: 40px; filter: drop-shadow(0 0 1px #000); transition: transform 0.3s ease; cursor: pointer;" 
+         onmouseover="this.style.transform='scale(1.15)'" 
+         onmouseout="this.style.transform='scale(1)'"/>
+  </a>
+</div>
+
+<script>
+  const btnTop = document.getElementById('btn-top');
+  btnTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
+
+
+
